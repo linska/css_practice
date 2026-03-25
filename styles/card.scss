@@ -6,12 +6,33 @@ $info-font-size: 18px;
 
 .card {
   position: relative;
+
   text-align: center;
+
+  z-index: 1;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    display: block;
+    width: calc(100% + 20px);
+    height: calc(100% + 60px);
+
+    background-color: var(--gray);
+    border-radius: 10px;
+    opacity: 0;
+
+    z-index: -1;
+  }
 
   &__image {
     display: flex;
-    max-width: 100%;
-    height: auto;
+    max-width: $column-width;
+    height: $column-width;
     border-radius: $column-width / 2;
   }
 
@@ -93,7 +114,13 @@ $info-font-size: 18px;
   }
 
   &:hover {
+    z-index: 2;
+
     .card__info {
+      opacity: 1;
+    }
+
+    &::before {
       opacity: 1;
     }
   }
