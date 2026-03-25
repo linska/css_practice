@@ -110,9 +110,12 @@ p {
 
 .card__info {
   opacity: 0;
+  text-align: center;
   font-size: 18px;
   position: absolute;
-  bottom: 0;
+  bottom: -30px;
+  left: 0;
+  right: 0;
 }
 
 .card__info--name:after {
@@ -128,5 +131,9 @@ p {
 .card__info--value:after {
   content: "M";
   display: inline;
+}
+
+.card:hover .card__info {
+  opacity: 1;
 }
 /*# sourceMappingURL=css_practice.3cc4c8dc.css.map */
