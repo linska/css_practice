@@ -63,9 +63,13 @@ $info-font-size: 18px;
 
   &__info {
     position: absolute;
-    bottom: 0;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+
     opacity: 0;
     font-size: $info-font-size;
+    text-align: center;
   }
 
   &__info--name {
@@ -85,6 +89,12 @@ $info-font-size: 18px;
     &::after {
       content: 'M';
       display: inline;
+    }
+  }
+
+  &:hover {
+    .card__info {
+      opacity: 1;
     }
   }
 }
