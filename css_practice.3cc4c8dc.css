@@ -62,6 +62,7 @@ p {
 .card {
   text-align: center;
   z-index: 1;
+  transition: transform 1s ease-in-out;
   position: relative;
 }
 
@@ -83,6 +84,7 @@ p {
   border-radius: 100px;
   max-width: 200px;
   height: 200px;
+  transition: border-radius 1s ease-in-out;
   display: flex;
 }
 
@@ -150,9 +152,14 @@ p {
 
 .card:hover {
   z-index: 2;
+  transform: scale(1.2);
 }
 
-.card:hover .card__info, .card:hover:before {
+.card:hover:before, .card:hover .card__info {
   opacity: 1;
+}
+
+.card:hover .card__image {
+  border-radius: 60px;
 }
 /*# sourceMappingURL=css_practice.3cc4c8dc.css.map */
