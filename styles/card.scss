@@ -3,11 +3,14 @@ $rank-position-right: 10px;
 $rank-font-size: 16px;
 $title-font-size: 20px;
 $info-font-size: 18px;
+$info-bottom-position: -30px;
+$image-hover-radius: 60px;
 
 .card {
   position: relative;
 
   text-align: center;
+  transition: transform 1s ease-in-out;
 
   z-index: 1;
 
@@ -34,6 +37,7 @@ $info-font-size: 18px;
     max-width: $column-width;
     height: $column-width;
     border-radius: $column-width / 2;
+    transition: border-radius 1s ease-in-out;
   }
 
   &__rank {
@@ -84,7 +88,7 @@ $info-font-size: 18px;
 
   &__info {
     position: absolute;
-    bottom: -30px;
+    bottom: $info-bottom-position;
     left: 0;
     right: 0;
 
@@ -115,13 +119,18 @@ $info-font-size: 18px;
 
   &:hover {
     z-index: 2;
+    transform: scale(1.2);
+
+    &::before {
+      opacity: 1;
+    }
 
     .card__info {
       opacity: 1;
     }
 
-    &::before {
-      opacity: 1;
+    .card__image {
+      border-radius: $image-hover-radius;
     }
   }
 }
